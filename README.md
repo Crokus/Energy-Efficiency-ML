@@ -4,7 +4,7 @@ Web application which estimates energy efficiency of a building based on its 5 p
 
 Utilizing Azure Machine Learning Regression Model which is not part of this repository.
 
-# Usage
+## Usage
 
 * Change `aml.url` and `aml.apiKey` appSetting in accordance to your Azure Machine Learning Web Service
 
@@ -19,6 +19,6 @@ Utilizing Azure Machine Learning Regression Model which is not part of this repo
         "glazingArea" : 0
     }`
 
-# Response
+## Response
 
 Numeric value indicating yearly heating load per m2.
