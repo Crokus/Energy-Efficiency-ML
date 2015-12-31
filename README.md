@@ -6,7 +6,7 @@ Utilizing Azure Machine Learning Regression Model which is not part of this repo
 
 ## Usage
 
-* Change `aml.url` and `aml.apiKey` appSetting in accordance to your Azure Machine Learning Web Service
+* Change `aml.url` and `aml.apiKey` in `web.config` appSettings in accordance to your Azure Machine Learning Web Service configuration
 
 * Make a POST request to `/api/heatingload` using below JSON schema (sample values):
 
