@@ -11,13 +11,13 @@ Utilizing Azure Machine Learning Regression Model which is not part of this repo
 * Make a POST request to `/api/heatingload` using below JSON schema (sample values):
 
 
-`{
-    "surfaceArea": 808.5,
-    "wallArea" : 367.5,
-    "roofArea" : 220.5,
-    "overallHeight" : 3.5,
-    "glazingArea" : 0
-}`
+    `{
+        "surfaceArea": 808.5,
+        "wallArea" : 367.5,
+        "roofArea" : 220.5,
+        "overallHeight" : 3.5,
+        "glazingArea" : 0
+    }`
 
 # Response
 
