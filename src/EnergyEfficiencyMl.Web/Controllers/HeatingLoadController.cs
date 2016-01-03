@@ -19,9 +19,9 @@ namespace EnergyEfficiencyMl.Web.Controllers
     {
         private readonly HttpClient _client = new HttpClient();
         // TODO: DI
+        private readonly double lowEfficiencyThreshold = double.Parse(ConfigurationManager.AppSettings["efficiencyThreshold.low"]);
         private readonly double mediumEfficiencyThreshold = double.Parse(ConfigurationManager.AppSettings["efficiencyThreshold.medium"]);
-        private readonly double highEfficiencyThreshold = double.Parse(ConfigurationManager.AppSettings["efficiencyThreshold.high"]);
-
+        
         // POST api/heatingload
         public async Task<IHttpActionResult> Post([FromBody] BuildingParameters buildingParameters)
         {
@@ -72,11 +72,11 @@ namespace EnergyEfficiencyMl.Web.Controllers
         {
             EnergyEfficiency efficiency;
             if (heatingLoadValue < mediumEfficiencyThreshold)
-                efficiency = EnergyEfficiency.Low;
-            else if (heatingLoadValue < highEfficiencyThreshold)
+                efficiency = EnergyEfficiency.High;
+            else if (heatingLoadValue < lowEfficiencyThreshold)
                 efficiency = EnergyEfficiency.Medium;
             else
-                efficiency = EnergyEfficiency.High;
+                efficiency = EnergyEfficiency.Low;
 
             return efficiency;
         }
