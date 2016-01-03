@@ -1,0 +1,35 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "plugins": [
+    "babel"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true,
+    "modules": true
+  },
+  "rules": {
+    "array-bracket-spacing": [ 2, "always" ],
+    "eol-last": 2,
+    "indent": [ 2, 2, { "SwitchCase": 1 } ],
+    "no-multiple-empty-lines": 2,
+    "no-unused-vars": [ 1, { "args": "none" } ],
+    "no-nested-ternary": 2,
+    "no-use-before-define": [ 2, "nofunc" ],
+    "no-var": 2,
+    "object-curly-spacing": [ 2, "always" ],
+    "quotes": [ 2, "single", "avoid-escape" ],
+    "semi": [ 2, "always" ],
+    "padded-blocks": [ 2, "never" ],
+    "space-before-blocks": [ 2, "always" ],
+    "space-in-parens": [ 2, "never" ],
+    "prefer-const": 2,
+    "babel/object-shorthand": [1, "always"],
+    "babel/arrow-parens": [2, "always"]
+  }
+}

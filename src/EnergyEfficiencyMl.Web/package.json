@@ -54,10 +54,10 @@
   },
   "private": true,
   "scripts": {
+    "task": "babel-node node_modules/start/build/cli tasks/",
     "build": "npm run task build",
     "build:prod": "npm run task build -- --release",
     "dev": "npm run task dev",
-    "lint": "npm run task eslint",
-    "task": "babel-node node_modules/start/build/cli tasks/"
+    "lint": "npm run task eslint"
   }
 }
