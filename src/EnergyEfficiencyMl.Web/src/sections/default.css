@@ -2,3 +2,7 @@
   -webkit-transform: translate3d(0, -100px, 0);
   transform: translate3d(0, -100px, 0);
 }
+
+.output {
+  min-width: 11ch;
+}
