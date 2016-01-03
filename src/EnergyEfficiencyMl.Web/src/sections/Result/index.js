@@ -15,20 +15,20 @@ export default function Result() {
     init(req, done) {
       const { channels, ...data } = currentState;
 
-      const json = JSON.stringify({
+      const jsonPayLoad = {
         surfaceArea: parseFloat(data.surfaceArea),
         wallArea: parseFloat(data.wallArea),
         roofArea: parseFloat(data.roofArea),
         overallHeight: parseFloat(data.overallHeight),
         glazingArea: parseFloat(data.glazingArea)
-      });
+      };
 
-      console.log(json);
+      console.log(jsonPayLoad);
 
       request({
-        url: 'http://localhost:57807/api/heatingload',
+        url: 'https://ee.local.powelasa.powel.com/api/heatingload',
         method: 'POST',
-        json
+        json: jsonPayLoad
       })
         .then((result) => {
           console.log(result);
