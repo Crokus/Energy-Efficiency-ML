@@ -1,0 +1,50 @@
+<div>
+  <header class="fixed fill-navy100 w100">
+    <img class="posA mLs mLl--l" src="<%= logoSrc %>" alt="Logo" height="50">
+  </header>
+  <div class="Steps">
+    <div role="Navigation" aria-label="Steps">
+      <ol class="fixed nav nav--block steps-nav w100">
+        <%
+          navRoutes.forEach(function(route) {
+        %>
+          <li class="steps-label <% if (route.path === currentRoute) { print('js-currentRoute'); } %>">
+            <%= route.title %>
+          </li>
+        <%
+          })
+        %>
+      </ol>
+      <% if (prevRoute) { %>
+        <button class="steps-button btn fL js-navPrev" type="button" tabindex="3">
+          <div class="iconCircle iconCircle--medium iconCircle--outline">
+            <div class="svgIcon">
+              <svg role="presentation" viewBox="0 0 560 560"><path d="M209.44 525.28c12.322 14.56 33.6 15.68 47.04 3.36 14.56-12.32 15.68-33.6 3.36-47.038l-142.238-168h408.796C545.44 313.6 560 299.04 560 280c0-19.04-14.56-33.602-33.602-33.602H117.602L260.962 77.28c12.32-14.56 10.077-35.84-3.36-47.042-7.84-5.597-14.563-7.84-22.403-7.84-8.962 0-19.04 4.48-25.76 12.32L0 280z"/></svg>
+            </div>
+          </div>
+          <span class="mLs steps-button-label">Previous</span>
+        </button>
+      <% } %>
+      <% if (isFinalRoute) { %>
+        <button class="steps-button btn fL js-navPrev" type="button" tabindex="1">
+          <div class="iconCircle iconCircle--medium iconCircle--outline">
+            <div class="svgIcon">
+              <svg role="presentation" viewBox="0 0 560 560"><path d="M322.4 280l168.8-168.8c11.7-11.7 11.7-30.7 0-42.4s-30.7-11.7-42.4 0L280 237.6 111.2 68.8c-11.7-11.7-30.7-11.7-42.4 0s-11.7 30.7 0 42.4L237.6 280 68.8 448.8c-11.7 11.7-11.7 30.7 0 42.4 5.9 5.9 13.5 8.8 21.2 8.8s15.4-2.9 21.2-8.8L280 322.4l168.8 168.8c5.9 5.9 13.5 8.8 21.2 8.8s15.4-2.9 21.2-8.8c11.7-11.7 11.7-30.7 0-42.4L322.4 280z"/></svg>
+            </div>
+          </div>
+          <span class="mLs steps-button-label">Cancel</span>
+        </button>
+      <% } %>
+      <% if (nextRoute) { %>
+        <button class="steps-button btn fR js-navNext" type="button" tabindex="2">
+          <span class="mRs steps-button-label">Next</span>
+          <div class="iconCircle iconCircle--medium iconCircle--outline">
+            <div class="svgIcon">
+              <svg role="presentation" viewBox="0 0 560 560"><path d="M350.56 34.72c-12.322-14.56-33.6-15.68-47.04-3.36-14.56 12.32-15.68 33.6-3.36 47.038l142.238 168H33.602C14.56 246.4 0 260.96 0 280c0 19.04 14.56 33.6 33.6 33.602h408.796L299.038 482.72c-12.32 14.56-10.077 35.84 3.36 47.04 6.72 5.6 14.56 7.84 21.28 7.84 8.96 0 19.04-4.48 25.76-12.32L560 280z"/></svg>
+            </div>
+          </div>
+        </button>
+      <% } %>
+    </div>
+  </div>
+</div>
