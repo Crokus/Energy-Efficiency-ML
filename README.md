@@ -21,4 +21,12 @@ Utilizing Azure Machine Learning Regression Model which is not part of this repo
 
 ## Response
 
-Numeric value indicating yearly heating load per m2.
+Object with following properties, numeric values are yearly consumption:
+
+    `{
+      "consumptionPerSquareMeter": 32.702969600571,
+      "totalConsumption": 2616.2375680456803,
+      "efficiency": "High"
+    }`
+
+Efficiency thresholds can be altered in `appSettings` in `web.config`.
