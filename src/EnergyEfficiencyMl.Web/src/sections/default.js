@@ -6,7 +6,7 @@ import elementClass from 'element-class';
 
 import addListener from '../lib/addListener';
 import { state, currentState } from '../state';
-import { root } from './default.css';
+import styles from './default.css';
 
 export default function Default(template, dataKey, opt = {}) {
   if (!template) {
@@ -32,6 +32,7 @@ export default function Default(template, dataKey, opt = {}) {
       const { channels, ...data } = currentState;
 
       el = domify(template({
+        styles,
         selectOpts: opt.selectOpts || {},
         outputFormat: opt.outputFormat,
         data: {
@@ -39,7 +40,7 @@ export default function Default(template, dataKey, opt = {}) {
         }
       }));
 
-      elementClass(el).add(root);
+      elementClass(el).add(styles.root);
 
       inputListener = addListener(
         select('.js-input', el),

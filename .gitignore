@@ -166,17 +166,9 @@ $RECYCLE.BIN/
 
 # NPM Packages Directory
 **/node_modules/*
-!**/node_modules/do_not_delete.txt
-!**/node_modules/powel-header
 
-
-# Generated bundle files
-Powel.Maintenance.Web/Scripts/app/app-bundle.js
-Powel.Maintenance.Web/Scripts/app/app-bundle.min.js
+# Generated dist files
+src/EnergyEfficiencyMl.Web/dist/
 
 # Genereted deployment directory
 Deployment/
-Powel.Maintenance.Web/Scripts/app/app.bundle.js
-Powel.Maintenance.Web/Content/app.css
-Powel.Collector.Web/Scripts/dist/app.bundle.js
-Powel.Collector.Web/Content/app.css
