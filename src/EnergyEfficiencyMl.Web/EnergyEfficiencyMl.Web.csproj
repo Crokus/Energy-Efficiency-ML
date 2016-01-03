@@ -192,6 +192,8 @@
     </Compile>
     <Compile Include="Models\AmlInputModel.cs" />
     <Compile Include="Models\BuildingParameters.cs" />
+    <Compile Include="Models\EnergyEfficiency.cs" />
+    <Compile Include="Models\HeatingLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

@@ -18,6 +18,9 @@ namespace EnergyEfficiencyMl.Web.Controllers
     public class HeatingLoadController : ApiController
     {
         private readonly HttpClient _client = new HttpClient();
+        // TODO: DI
+        private readonly double mediumEfficiencyThreshold = double.Parse(ConfigurationManager.AppSettings["efficiencyThreshold.medium"]);
+        private readonly double highEfficiencyThreshold = double.Parse(ConfigurationManager.AppSettings["efficiencyThreshold.high"]);
 
         // POST api/heatingload
         public async Task<IHttpActionResult> Post([FromBody] BuildingParameters buildingParameters)
@@ -49,7 +52,33 @@ namespace EnergyEfficiencyMl.Web.Controllers
             // Schema of your Web Service output object might be different, change accordingly
             double heatingLoadValue = resultObject.SelectToken("Results.output1.value.Values[0][6]").Value<double>();
 
-            return Ok(heatingLoadValue);
+            HeatingLoad heatingLoadModel = CreateHeatingLoadResponse(heatingLoadValue, buildingParameters.SurfaceArea);
+
+            return Ok(heatingLoadModel);
+        }
+
+        private HeatingLoad CreateHeatingLoadResponse(double heatingLoadValue, double? surfaceArea)
+        {
+            HeatingLoad heatingLoadModel = new HeatingLoad();
+
+            heatingLoadModel.ConsumptionPerSquareMeter = heatingLoadValue;
+            heatingLoadModel.TotalConsumption = heatingLoadValue * surfaceArea.Value;
+            heatingLoadModel.Efficiency = CalculateEfficiency(heatingLoadValue);
+
+            return heatingLoadModel;
+        }
+
+        private EnergyEfficiency CalculateEfficiency(double heatingLoadValue)
+        {
+            EnergyEfficiency efficiency;
+            if (heatingLoadValue < mediumEfficiencyThreshold)
+                efficiency = EnergyEfficiency.Low;
+            else if (heatingLoadValue < highEfficiencyThreshold)
+                efficiency = EnergyEfficiency.Medium;
+            else
+                efficiency = EnergyEfficiency.High;
+
+            return efficiency;
         }
 
         private AmlInputModel CreateAmlInput(BuildingParameters buildingParameters)
