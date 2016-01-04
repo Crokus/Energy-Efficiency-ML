@@ -1,8 +1,97 @@
-<div>
-  result:<%= result %><br><br>
-  <%= data.surfaceArea %><br>
-  <%= data.wallArea %><br>
-  <%= data.roofArea %><br>
-  <%= data.glazingArea %><br>
-  <%= data.height %>
+<div class="wrap steps-panel posR tH l0">
+  <h1 class="beta">Result</h1>
+  <p class="mTn mBm">
+    <span class="alpha"><%= formatNumber(result.consumptionPerSquareMeter, { round: 6, sectionsDelimiter: '.' }) %> </span>
+    <span class="beta">kWh/m<sup>2</sup></span>
+  </p>
+  <p class="mTn mBxl">
+    <span class="label js-label"><%= result.efficiency %> efficiency</span>
+  </p>
+  <div class="js-consumption">
+    <h2 class="gamma mBm headingDecorated headingDecorated--left">Total consumption</h2>
+    <p class="mBxl">
+      <span class="gamma"><%= formatNumber(result.totalConsumption, { round: 6, sectionsDelimiter: '.' }) %> </span>
+      <span class="delta">kWh/m<sup>2</sup></span>
+    </p>
+  </div>
+  <div class="js-data">
+    <h2 class="gamma mBm headingDecorated headingDecorated--left">Entered data</h2>
+    <div class="grid">
+      <div class="grid-cell w100">
+        <div class="cf pAs">
+          <div class="fL mRl">
+            <div class="svgIcon svgIcon--xLarge">
+              <svg role="presentation">
+                <use xlink:href="#svg--surfaceArea"/>
+              </svg>
+            </div>
+          </div>
+          <div class="nbfc">
+            <h3 class="epsilon mAn">Surface area</h3>
+            <p class="mAn gray130"><%= data.surfaceArea %> m<sup>2</sup></p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell w100">
+        <div class="cf pAs">
+          <div class="fL mRl">
+            <div class="svgIcon svgIcon--xLarge">
+              <svg role="presentation">
+                <use xlink:href="#svg--wallArea"/>
+              </svg>
+            </div>
+          </div>
+          <div class="nbfc">
+            <h3 class="epsilon mAn">Wall area</h3>
+            <p class="mAn gray130"><%= data.wallArea %> m<sup>2</sup></p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell w100">
+        <div class="cf pAs">
+          <div class="fL mRl">
+            <div class="svgIcon svgIcon--xLarge">
+              <svg role="presentation">
+                <use xlink:href="#svg--roofArea"/>
+              </svg>
+            </div>
+          </div>
+          <div class="nbfc">
+            <h3 class="epsilon mAn">Roof area</h3>
+            <p class="mAn gray130"><%= data.roofArea %> m<sup>2</sup></p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell w100">
+        <div class="cf pAs">
+          <div class="fL mRl">
+            <div class="svgIcon svgIcon--xLarge">
+              <svg role="presentation">
+                <use xlink:href="#svg--glazingArea"/>
+              </svg>
+            </div>
+          </div>
+          <div class="nbfc">
+            <h3 class="epsilon mAn">Glazing area</h3>
+            <p class="mAn gray130"><%= data.glazingArea * 100 %>%</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell w100">
+        <div class="cf pAs">
+          <div class="fL mRl">
+            <div class="svgIcon svgIcon--xLarge">
+              <svg role="presentation">
+                <use xlink:href="#svg--height"/>
+              </svg>
+            </div>
+          </div>
+          <div class="nbfc">
+            <h3 class="epsilon mAn">Height</h3>
+            <p class="mAn gray130"><%= data.overallHeight %> m</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

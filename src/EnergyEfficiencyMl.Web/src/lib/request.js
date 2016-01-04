@@ -19,11 +19,7 @@ export default function request(opts) {
       const statusCode = resp.statusCode;
 
       if (statusCode >= 200 && statusCode < 300) {
-        try {
-          resolve(JSON.parse(body));
-        } catch(ex) {
-          reject(ex);
-        }
+        resolve(body);
       } else {
         reject(new Error(statusCode + ': ' + body));
       }
