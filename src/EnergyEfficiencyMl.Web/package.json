@@ -1,5 +1,5 @@
 {
-  "name": "bigwheel-example",
+  "name": "energy-efficiency-ml",
   "version": "0.0.1",
   "author": "Filip Malinowski <filip@fmal.me>",
   "dependencies": {
@@ -9,6 +9,7 @@
     "dom-select": "~1.1.0",
     "domify": "~1.4.0",
     "element-class": "~0.2.2",
+    "fnumber": "~0.1.0",
     "gsap-promise": "~1.4.1",
     "lodash.pluck": "~3.1.2",
     "lodash.template": "~3.6.2",

@@ -33,7 +33,7 @@ export default function UiHeader() {
         currentRoute,
         isFinalRoute
       }));
-      
+
       const prevButton = select('.js-navPrev', el);
       const nextButton = select('.js-navNext', el);
       const cancelButton = select('.js-navCancel', el);
@@ -43,26 +43,28 @@ export default function UiHeader() {
         'click',
         function navNextHandler(e) {
           e.preventDefault();
-          
+
           nextRoute && framework.go(nextRoute);
         }
       );
-      
+
       navPrevListener = prevButton && addListener(
         prevButton,
         'click',
         function navPrevHandler(e) {
           e.preventDefault();
-          
+
           prevRoute && framework.go(prevRoute);
         }
       );
-      
+
       navCancelListener = cancelButton && addListener(
         cancelButton,
         'click',
         function navCancelHandler(e) {
           e.preventDefault();
+
+          window.location.href = '/';
         }
       );
 

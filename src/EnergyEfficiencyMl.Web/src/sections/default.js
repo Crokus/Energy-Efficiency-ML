@@ -77,7 +77,7 @@ export default function Default(template, dataKey, opt = {}) {
           autoAlpha: 1,
           ease: Expo.easeInOut // eslint-disable-line no-undef
         }),
-        animate.fromTo(icon, .35, {
+        animate.fromTo(icon, .45, {
           opacity: 0,
           scale: 0
         }, {
