@@ -1,7 +1,7 @@
 <div class="wrap steps-panel posR tH l0">
   <h1 class="beta">Result</h1>
   <p class="mTn mBm">
-    <span class="alpha"><%= formatNumber(result.consumptionPerSquareMeter, { round: 6, sectionsDelimiter: '.' }) %> </span>
+    <span class="alpha"><%= formatNumber(result.consumptionPerSquareMeter, { round: 2, sectionsDelimiter: '.' }) %> </span>
     <span class="beta">kWh/m<sup>2</sup></span>
   </p>
   <p class="mTn mBxl">
@@ -10,7 +10,7 @@
   <div class="js-consumption">
     <h2 class="gamma mBm headingDecorated headingDecorated--left">Total consumption</h2>
     <p class="mBxl">
-      <span class="gamma"><%= formatNumber(result.totalConsumption, { round: 6, sectionsDelimiter: '.' }) %> </span>
+      <span class="gamma"><%= formatNumber(result.totalConsumption, { round: 2, sectionsDelimiter: '.' }) %> </span>
       <span class="delta">kWh/m<sup>2</sup></span>
     </p>
   </div>
