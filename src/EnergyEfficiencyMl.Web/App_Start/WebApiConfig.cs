@@ -19,6 +19,8 @@ namespace EnergyEfficiencyMl.Web
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new {id = RouteParameter.Optional});
+
+            GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
         }
     }
 }
